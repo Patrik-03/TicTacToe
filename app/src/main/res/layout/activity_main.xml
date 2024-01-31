@@ -11,8 +11,11 @@
         style="@style/button"
         android:layout_marginStart="30dp"
         android:layout_marginTop="200dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck"
+        tools:text="a"/>
 
     <Button
         android:id="@+id/R2"
@@ -22,7 +25,9 @@
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toStartOf="@+id/R3"
         app:layout_constraintStart_toEndOf="@+id/R1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck"
+        tools:text="b" />
 
     <Button
         android:id="@+id/R3"
@@ -30,7 +35,9 @@
         android:layout_marginTop="200dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck"
+        tools:text="c"/>
 
     <Button
         android:id="@+id/R4"
@@ -38,7 +45,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/R1" />
+        app:layout_constraintTop_toBottomOf="@+id/R1"
+        tools:ignore="TextSizeCheck"
+        tools:text="d"/>
 
     <Button
         android:id="@+id/R5"
@@ -48,7 +57,9 @@
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toStartOf="@+id/R6"
         app:layout_constraintStart_toEndOf="@+id/R4"
-        app:layout_constraintTop_toBottomOf="@+id/R2" />
+        app:layout_constraintTop_toBottomOf="@+id/R2"
+        tools:ignore="TextSizeCheck"
+        tools:text="e"/>
 
     <Button
         android:id="@+id/R6"
@@ -56,7 +67,9 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/R3" />
+        app:layout_constraintTop_toBottomOf="@+id/R3"
+        tools:ignore="TextSizeCheck"
+        tools:text="f"/>
 
     <Button
         android:id="@+id/R7"
@@ -64,7 +77,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/R4" />
+        app:layout_constraintTop_toBottomOf="@+id/R4"
+        tools:ignore="TextSizeCheck"
+        tools:text="g"/>
 
     <Button
         android:id="@+id/R8"
@@ -74,7 +89,9 @@
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toStartOf="@+id/R9"
         app:layout_constraintStart_toEndOf="@+id/R7"
-        app:layout_constraintTop_toBottomOf="@+id/R5" />
+        app:layout_constraintTop_toBottomOf="@+id/R5"
+        tools:ignore="TextSizeCheck"
+        tools:text="h"/>
 
     <Button
         android:id="@+id/R9"
@@ -82,7 +99,9 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/R6" />
+        app:layout_constraintTop_toBottomOf="@+id/R6"
+        tools:ignore="TextSizeCheck"
+        tools:text="i"/>
 
     <View
         android:id="@+id/divider"
@@ -127,5 +146,26 @@
         app:layout_constraintEnd_toStartOf="@+id/R3"
         app:layout_constraintStart_toEndOf="@+id/R2"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/winText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="104dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/R8"
+        android:textSize="40sp"/>
+
+    <Button
+        android:id="@+id/Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/reset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winText"
+        tools:text="Reset" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
