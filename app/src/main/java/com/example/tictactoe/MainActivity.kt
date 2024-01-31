@@ -22,18 +22,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var winText: TextView
 
     private var activePlayer = Player.X // X will start the game
-    private var matrix1 = Array(3) { IntArray(3) }
-    private var matrix2 = Array(3) { IntArray(3) }
+    private var matrix = Array(3) { IntArray(3) }
 
     private fun buttonClicked(button: Button, row: Int, col: Int) {
         if (activePlayer == Player.X) {
             button.text = "X"
-            matrix1[row][col] = 1
+            matrix[row][col] = 1
             activePlayer = Player.O
         }
         else if (activePlayer == Player.O) {
             button.text = "O"
-            matrix2[row][col] = 2
+            matrix[row][col] = 2
             activePlayer = Player.X
         }
         button.isEnabled = false
@@ -54,35 +53,86 @@ class MainActivity : AppCompatActivity() {
     }
     private fun winCheck(){
         for(i in 0..2){
-            if(matrix1[i][0] == 1 && matrix1[i][1] == 1 && matrix1[i][2] == 1){
-                winText.text = "X wins"
+            if(matrix[i][0] == matrix[i][1] && matrix[i][1] == matrix[i][2]){
+                if(matrix[i][0] == 1){
+                    winText.text = "X wins!"
+                    disableButtons()
+                }
+                else if(matrix[i][0] == 2){
+                    winText.text = "O wins!"
+                    disableButtons()
+                }
             }
-            else if(matrix1[0][i] == 1 && matrix1[1][i] == 1 && matrix1[2][i] == 1){
-                winText.text = "X wins"
+            else if(matrix[0][i] == matrix[1][i] && matrix[1][i] == matrix[2][i]){
+                if(matrix[0][i] == 1){
+                    winText.text = "X wins!"
+                    disableButtons()
+                }
+                else if(matrix[0][i] == 2){
+                    winText.text = "O wins!"
+                    disableButtons()
+                }
             }
-            else if(matrix1[0][0] == 1 && matrix1[1][1] == 1 && matrix1[2][2] == 1){
-                winText.text = "X wins"
+            else if(matrix[0][0] == matrix[1][1] && matrix[1][1] == matrix[2][2]){
+                if(matrix[0][0] == 1){
+                    winText.text = "X wins!"
+                    disableButtons()
+                }
+                else if(matrix[0][0] == 2){
+                    winText.text = "O wins!"
+                    disableButtons()
+                }
             }
-            else if(matrix1[0][2] == 1 && matrix1[1][1] == 1 && matrix1[2][0] == 1){
-                winText.text = "X wins"
+            else if(matrix[0][2] == matrix[1][1] && matrix[1][1] == matrix[2][0]){
+                if(matrix[0][2] == 1){
+                    winText.text = "X wins!"
+                    disableButtons()
+                }
+                else if(matrix[0][2] == 2){
+                    winText.text = "O wins!"
+                    disableButtons()
+                }
             }
-            else if(matrix2[i][0] == 2 && matrix2[i][1] == 2 && matrix2[i][2] == 2){
-                winText.text = "O wins"
-            }
-            else if(matrix2[0][i] == 2 && matrix2[1][i] == 2 && matrix2[2][i] == 2){
-                winText.text = "O wins"
-            }
-            else if(matrix2[0][0] == 2 && matrix2[1][1] == 2 && matrix2[2][2] == 2){
-                winText.text = "O wins"
-            }
-            else if(matrix2[0][2] == 2 && matrix2[1][1] == 2 && matrix2[2][0] == 2){
-                winText.text = "O wins"
-            }
-            else{
-                winText.text = "Draw"
+
+        }
+    }
+    private fun disableButtons(){
+        button1.isEnabled = false
+        button2.isEnabled = false
+        button3.isEnabled = false
+        button4.isEnabled = false
+        button5.isEnabled = false
+        button6.isEnabled = false
+        button7.isEnabled = false
+        button8.isEnabled = false
+        button9.isEnabled = false
+    }
+    private fun reset(){
+        activePlayer = Player.X
+        for(i in 0..2){
+            for(j in 0..2){
+                matrix[i][j] = 0
             }
         }
-
+        button1.text = ""
+        button2.text = ""
+        button3.text = ""
+        button4.text = ""
+        button5.text = ""
+        button6.text = ""
+        button7.text = ""
+        button8.text = ""
+        button9.text = ""
+        button1.isEnabled = true
+        button2.isEnabled = true
+        button3.isEnabled = true
+        button4.isEnabled = true
+        button5.isEnabled = true
+        button6.isEnabled = true
+        button7.isEnabled = true
+        button8.isEnabled = true
+        button9.isEnabled = true
+        winText.text = ""
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -99,6 +149,12 @@ class MainActivity : AppCompatActivity() {
         button9 = findViewById(R.id.R9)
         resetButton = findViewById(R.id.Reset)
         winText = findViewById(R.id.winText)
+
+        for(i in 0..2){
+            for(j in 0..2){
+                matrix[i][j] = 0
+            }
+        }
 
         button1.setOnClickListener {
             identifyButton(button1)
@@ -126,6 +182,9 @@ class MainActivity : AppCompatActivity() {
         }
         button9.setOnClickListener {
             identifyButton(button9)
+        }
+        resetButton.setOnClickListener {
+            reset()
         }
     }
 }
