@@ -57,40 +57,112 @@ class MainActivity : AppCompatActivity() {
                 if(matrix[i][0] == 1){
                     winText.text = "X wins!"
                     disableButtons()
+                    if (i == 0){
+                        button1.setTextColor(0xFFFF0000.toInt())
+                        button2.setTextColor(0xFFFF0000.toInt())
+                        button3.setTextColor(0xFFFF0000.toInt())
+                    }
+                    else if (i == 1){
+                        button4.setTextColor(0xFFFF0000.toInt())
+                        button5.setTextColor(0xFFFF0000.toInt())
+                        button6.setTextColor(0xFFFF0000.toInt())
+                    }
+                    else{
+                        button7.setTextColor(0xFFFF0000.toInt())
+                        button8.setTextColor(0xFFFF0000.toInt())
+                        button9.setTextColor(0xFFFF0000.toInt())
+                    }
                 }
                 else if(matrix[i][0] == 2){
                     winText.text = "O wins!"
                     disableButtons()
+                    if (i == 0){
+                        button1.setTextColor(0xFFFF0000.toInt())
+                        button2.setTextColor(0xFFFF0000.toInt())
+                        button3.setTextColor(0xFFFF0000.toInt())
+                    }
+                    else if (i == 1){
+                        button4.setTextColor(0xFFFF0000.toInt())
+                        button5.setTextColor(0xFFFF0000.toInt())
+                        button6.setTextColor(0xFFFF0000.toInt())
+                    }
+                    else{
+                        button7.setTextColor(0xFFFF0000.toInt())
+                        button8.setTextColor(0xFFFF0000.toInt())
+                        button9.setTextColor(0xFFFF0000.toInt())
+                    }
                 }
             }
             else if(matrix[0][i] == matrix[1][i] && matrix[1][i] == matrix[2][i]){
                 if(matrix[0][i] == 1){
                     winText.text = "X wins!"
                     disableButtons()
+                    if (i == 0){
+                        button1.setTextColor(0xFFFF0000.toInt())
+                        button4.setTextColor(0xFFFF0000.toInt())
+                        button7.setTextColor(0xFFFF0000.toInt())
+                    }
+                    else if (i == 1){
+                        button2.setTextColor(0xFFFF0000.toInt())
+                        button5.setTextColor(0xFFFF0000.toInt())
+                        button8.setTextColor(0xFFFF0000.toInt())
+                    }
+                    else{
+                        button3.setTextColor(0xFFFF0000.toInt())
+                        button6.setTextColor(0xFFFF0000.toInt())
+                        button9.setTextColor(0xFFFF0000.toInt())
+                    }
                 }
                 else if(matrix[0][i] == 2){
                     winText.text = "O wins!"
                     disableButtons()
+                    if (i == 0){
+                        button1.setTextColor(0xFFFF0000.toInt())
+                        button4.setTextColor(0xFFFF0000.toInt())
+                        button7.setTextColor(0xFFFF0000.toInt())
+                    }
+                    else if (i == 1){
+                        button2.setTextColor(0xFFFF0000.toInt())
+                        button5.setTextColor(0xFFFF0000.toInt())
+                        button8.setTextColor(0xFFFF0000.toInt())
+                    }
+                    else{
+                        button3.setTextColor(0xFFFF0000.toInt())
+                        button6.setTextColor(0xFFFF0000.toInt())
+                        button9.setTextColor(0xFFFF0000.toInt())
+                    }
                 }
             }
             else if(matrix[0][0] == matrix[1][1] && matrix[1][1] == matrix[2][2]){
                 if(matrix[0][0] == 1){
                     winText.text = "X wins!"
                     disableButtons()
+                    button1.setTextColor(0xFFFF0000.toInt())
+                    button5.setTextColor(0xFFFF0000.toInt())
+                    button9.setTextColor(0xFFFF0000.toInt())
                 }
                 else if(matrix[0][0] == 2){
                     winText.text = "O wins!"
                     disableButtons()
+                    button1.setTextColor(0xFFFF0000.toInt())
+                    button5.setTextColor(0xFFFF0000.toInt())
+                    button9.setTextColor(0xFFFF0000.toInt())
                 }
             }
             else if(matrix[0][2] == matrix[1][1] && matrix[1][1] == matrix[2][0]){
                 if(matrix[0][2] == 1){
                     winText.text = "X wins!"
                     disableButtons()
+                    button3.setTextColor(0xFFFF0000.toInt())
+                    button5.setTextColor(0xFFFF0000.toInt())
+                    button7.setTextColor(0xFFFF0000.toInt())
                 }
                 else if(matrix[0][2] == 2){
                     winText.text = "O wins!"
                     disableButtons()
+                    button3.setTextColor(0xFFFF0000.toInt())
+                    button5.setTextColor(0xFFFF0000.toInt())
+                    button7.setTextColor(0xFFFF0000.toInt())
                 }
             }
 
@@ -123,6 +195,15 @@ class MainActivity : AppCompatActivity() {
         button7.text = ""
         button8.text = ""
         button9.text = ""
+        button1.setTextColor(0xFF000000.toInt())
+        button2.setTextColor(0xFF000000.toInt())
+        button3.setTextColor(0xFF000000.toInt())
+        button4.setTextColor(0xFF000000.toInt())
+        button5.setTextColor(0xFF000000.toInt())
+        button6.setTextColor(0xFF000000.toInt())
+        button7.setTextColor(0xFF000000.toInt())
+        button8.setTextColor(0xFF000000.toInt())
+        button9.setTextColor(0xFF000000.toInt())
         button1.isEnabled = true
         button2.isEnabled = true
         button3.isEnabled = true
